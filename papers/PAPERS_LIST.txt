@@ -1,0 +1,62 @@
+
+ Mora-et-al-2020_Concise_Python_LBM_on_HPC_for_geo-fluid_flow.pdf
+ Mora-et-al-2021_Optimal_surface_tension_RK_multiphase_LBM.pdf
+ Mora-et-al-2023_Multiphase_LBM_three_phase_two_component_flow.pdf
+ Mora-et-al-EGU-2026-TLBM-to-study-early-Earth.pptx
+ Mora-Yuen-2018_LBM_simulation_of_regimes_of_convection_and_plume_dynamics.pdf
+ Morra-et-al-AGU2025-Magma_ocean_dynamics_with_PT_dependent_viscosity.pdf
+
+
+----------------------------------------------------------------------------------------------------------
+1. Mora-et-al-2026_TLBM_geodynamical_modelling_of_solid_state_convection_and_magma_dynamics_and_strong_scaling_to_the_exascale.pdf
+
+   TLBM theory, timescales and conversion between dimensional physical and dimensionless LBM properties,
+   examples of solid state convection and turbulent magma ocean dynamics, performance and strong scaling
+   to 300K cores for 3D mantle models at a 3km resolution, time projections for mantle modelling at a 3 km
+   resolution and at up to Ra=10^17, Re and with Ra and Pr scaling with A for turbulent convection, 
+   model size requirements to model at ultra-high Rayleigh numbers up to Ra=10^17, and sinking block test.
+----------------------------------------------------------------------------------------------------------
+2. Morra-et-al-2025_Benchmark_TLBM_cf_PDE_Navier_Stokes_solvers.pdf
+
+   Benchmarks of the TLBM against two finite PR PDE solvers for Pr=1,10,100 and 1000,
+   and comparison of Pr = 1000 benchmarks against an infinite Pr PDE solver. 
+----------------------------------------------------------------------------------------------------------
+3. Mora-Yuen-2018_LBM_simulation_of_regimes_of_convection_and_plume_dynamics.pdf
+
+   TLBM simulations of regimes of thermal convection at Ra from 1000 to 10^10 at Pr
+   from 1 to 50K, and Nusselt number to Ra scaling for Ra = 10^4 through 10^7.5 at Pr=1.
+----------------------------------------------------------------------------------------------------------
+4. Mora-et-al-2020_Concise_Python_LBM_on_HPC_for_geo-fluid_flow.pdf
+
+   Implementation of the LBM for HPC clusters in Python using mpi4py and weak scaling to 2K cores.
+----------------------------------------------------------------------------------------------------------
+5. Mora-et-al-2021_Optimal_surface_tension_RK_multiphase_LBM.pdf
+
+   Optimal surface tension isotropy immiscible multiphase LBM.
+----------------------------------------------------------------------------------------------------------
+6. Mora-et-al-2023_Multiphase_LBM_three_phase_two_component_flow.pdf
+
+   Multiphase LBM with two immiscible phases and a miscible component in one of the immiscible phases.
+----------------------------------------------------------------------------------------------------------
+7. Honarbakhsh-et-al-2026_(in_press)_Iron_silicate_segregation_in_convecting_magma_ocean_via_multiphase_TLBM.pdf
+
+   Iron-silicate segregation within a convecting magma ocean via the multiphase TLBM and implications to iron-silicate mixing.
+----------------------------------------------------------------------------------------------------------
+8. Honarbakhsh-et-al-2026_(submitted)_Metal_silicate_segregation_during_planetary_accretion.pdf
+
+   Immiscible multiphase TLBM of metal-silicate segregation during planetary accretion, limited
+   iron emulsification through larger impacts, and higher mixing in deeper magma ocean layers.
+----------------------------------------------------------------------------------------------------------
+9. Bargees-et-al-2026_(in_preparation)_Immiscible_and_miscible_multiphase_TLBM_for_laminar_and_turbulent_flow.pdf
+
+   Theory of multiphase TLBM capable of modelling both immiscible and miscible phases for solid state convection
+   and magma ocean dynamics with examples including iron cloud breakup and decent through a turbulent magma ocean
+   and partial melting of peridotite to TTG's and basalt.
+----------------------------------------------------------------------------------------------------------
+10. Mora-et-al-EGU-2026-TLBM-to-study-early-Earth.pptx
+
+   EGU PICO presentation summarizing research progress to study early Earth with the TLBM.
+----------------------------------------------------------------------------------------------------------
+11. Morra-et-al-AGU2025-Magma_ocean_dynamics_with_PT_dependent_viscosity.pdf
+
+   AGU poster on modelling P-T dependent viscosity to study turbulence in magma oceans and equilibriation in the Hadean.
