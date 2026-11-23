@@ -8,5 +8,7 @@ conditions, Pr = 10^3.
 
 See [README.txt](README.txt) for installation and run instructions,
 [NOTE_PROJECTS_FILE.txt](NOTE_PROJECTS_FILE.txt) for a note on the PROJECTS control file,
+[aspect_inputs/](aspect_inputs/) for the ASPECT parameter files of the twelve
+companion ASPECT runs (so both sides of the benchmark can be reproduced),
 and [benchmark_results/](benchmark_results/) for the benchmark figures and the
 TLBM vs ASPECT comparison spreadsheet.

@@ -1,0 +1,123 @@
+############### Global parameters
+# Physical parameters matching TLBM V2.9 bench_annular in files
+# R_p = Earth (6.378e6 m), L_p = whole_mantle (2.9e6 m)
+# rho=4500, eta=2.8e22, ka=1e-6, alpha=3e-5, dT=3400
+# g scaled to force Ra: g = 0.025 * 10^(n-4) gives Ra = 10^n
+#   Ra = rho*g*alpha*dT*L^3/(eta*ka)
+
+set CFL number                             = 1
+set End time                               = 2.1e17
+set Output directory                       = physical_Ra9
+set Start time                             = 0
+set Resume computation                     = auto
+set Use years instead of seconds           = false
+
+############### Checkpointing
+subsection Checkpointing
+  set Steps between checkpoint = 2000
+end
+
+subsection Termination criteria
+  set Termination criteria      = end time
+  set Checkpoint on termination = true
+end
+
+############### Parameters describing the model
+
+subsection Geometry model
+  set Model name = chunk
+
+  subsection Chunk
+    set Chunk inner radius      = 3478000
+    set Chunk outer radius      = 6378000
+    set Chunk minimum longitude = 45
+    set Chunk maximum longitude = 135
+  end
+end
+
+subsection Boundary velocity model
+  set Zero velocity boundary indicators       = top, bottom
+  set Tangential velocity boundary indicators = west, east
+end
+
+subsection Gravity model
+  set Model name = radial constant
+
+  subsection Radial constant
+    set Magnitude = 2500
+  end
+end
+
+subsection Material model
+  set Model name = simpler
+
+  subsection Simpler model
+    set Reference density             = 4500
+    set Reference specific heat       = 1250
+    set Reference temperature         = 15
+    set Thermal conductivity          = 5.625
+    set Thermal expansion coefficient = 3e-5
+    set Viscosity                     = 2.8e22
+  end
+end
+
+subsection Boundary temperature model
+  set Fixed temperature boundary indicators = top, bottom
+  set List of model names = spherical constant
+
+  subsection Spherical constant
+    set Inner temperature = 3415
+    set Outer temperature = 15
+  end
+end
+
+############### Parameters describing the temperature field
+
+subsection Initial temperature model
+  set Model name = spherical hexagonal perturbation
+
+  subsection Spherical hexagonal perturbation
+    set Angular mode          = 1
+    set Rotation offset       = 0
+  end
+end
+
+############### Parameters describing the discretization
+
+subsection Discretization
+  set Stokes velocity polynomial degree       = 2
+  set Temperature polynomial degree           = 2
+  set Use locally conservative discretization = false
+
+  subsection Stabilization parameters
+    set alpha = 2
+    set beta  = 0.078
+    set cR    = 0.11
+  end
+end
+
+subsection Mesh refinement
+  set Additional refinement times        =
+  set Initial adaptive refinement        = 0
+  set Initial global refinement          = 9
+  set Refinement fraction                = 1
+  set Coarsening fraction                = 0
+  set Strategy                           = temperature
+  set Time steps between mesh refinement = 0
+end
+
+############### Parameters describing what to do with the solution
+
+subsection Postprocess
+  set List of postprocessors = visualization, velocity statistics, temperature statistics, heat flux statistics, depth average, velocity boundary statistics, spherical velocity statistics
+
+  subsection Visualization
+    set Number of grouped files       = 0
+    set Output format                 = vtu
+    set Time between graphical output = 5.25e14
+  end
+
+  subsection Depth average
+    set Time between graphical output = 5.25e14
+  end
+end
