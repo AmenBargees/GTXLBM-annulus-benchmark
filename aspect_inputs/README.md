@@ -7,9 +7,10 @@ benchmark to be reproduced.
 
 ## ASPECT version
 
-All runs used a single build of ASPECT 3.1.0-pre (main branch, commit `ac19c42d2`)
-with deal.II 9.6.0. ASPECT is open-source software hosted by the Computational
-Infrastructure for Geodynamics: https://aspect.geodynamics.org
+All runs used the official ASPECT Docker image `geodynamics/aspect:latest`,
+which at the time of the runs contained ASPECT 3.1.0-pre (main branch, commit
+`ac19c42d2`) built with deal.II 9.6.0. ASPECT is open-source software hosted by
+the Computational Infrastructure for Geodynamics: https://aspect.geodynamics.org
 
 ## Files
 
@@ -27,9 +28,18 @@ g = 0.025 x 10^(n-4) m/s^2 for Ra = 10^n.
 
 ## Running
 
+The runs were launched through Docker, for example:
+
 ```
-mpirun -np <N> aspect aspect_freeslip_Ra1e6.prm
+docker run --rm \
+  -v "$(pwd)":/home/aspect/work \
+  --workdir /home/aspect/work \
+  geodynamics/aspect:latest \
+  mpirun -np <N> aspect aspect_freeslip_Ra1e6.prm > aspect.log 2>&1 &
 ```
+
+With a native ASPECT installation the equivalent is
+`mpirun -np <N> aspect aspect_freeslip_Ra1e6.prm`.
 
 Checkpointing is enabled (`Resume computation = auto`), so an interrupted run
 resumes from the last checkpoint when restarted with the same command. The
